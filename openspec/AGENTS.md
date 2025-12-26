@@ -463,3 +463,6 @@ For detailed standards and guidelines specific to the different areas of the pro
 - [Backend Standards](../ai-specs-gg/ai-specs-gg/specs/backend-standards.mdc) - API development, database patterns, testing, security and backend best practices
 - [Frontend Standards](../ai-specs-gg/ai-specs-gg/specs/frontend-standards.mdc) - React components, UI/UX guidelines and frontend architecture
 - [Documentation Standards](../ai-specs-gg/ai-specs-gg/specs/documentation-standards.mdc) - Technical documentation structure, formatting and maintenance guidelines, including AI standards like this document
+
+Note: Project-specific OpenSpec files live under /openspec.
+Global engineering standards are referenced from ../ai-specs-gg/ai-specs-gg/specs.
