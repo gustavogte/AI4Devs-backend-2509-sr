@@ -454,3 +454,12 @@ openspec archive <change-id> [--yes|-y]  # Mark complete (add --yes for automati
 ```
 
 Remember: Specs are truth. Changes are proposals. Keep them in sync.
+
+
+## Specific Project Standards
+
+For detailed standards and guidelines specific to the different areas of the project, refer to:
+
+- [Backend Standards](../ai-specs-gg/ai-specs-gg/specs/backend-standards.mdc) - API development, database patterns, testing, security and backend best practices
+- [Frontend Standards](../ai-specs-gg/ai-specs-gg/specs/frontend-standards.mdc) - React components, UI/UX guidelines and frontend architecture
+- [Documentation Standards](../ai-specs-gg/ai-specs-gg/specs/documentation-standards.mdc) - Technical documentation structure, formatting and maintenance guidelines, including AI standards like this document
