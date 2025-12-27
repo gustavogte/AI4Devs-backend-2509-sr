@@ -14,4 +14,10 @@ The candidate's average score. Remember that each interview (interview) complete
 
 Please create an OpenSpec change proposal for this function.
 
+3. I want to Add endpoint to update candidate stage (Kanban move).
 
+    Please create an OpenSpec change proposal for this feature
+
+The Kanban UI needs a way to move a candidate card between stages. This requires updating the candidate’s current interview stage for the relevant position/application.
+
+- Add `PUT /candidates/:id/stage` to update the candidate’s current interview stage.
