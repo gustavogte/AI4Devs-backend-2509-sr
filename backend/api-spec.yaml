@@ -223,4 +223,113 @@ paths:
           description: Position not found
         '500':
           description: Internal server error
+  /candidates/{id}/stage:
+    put:
+      summary: Update candidate interview stage
+      description: Updates a candidate's current interview stage for a specific position. This endpoint enables the Kanban UI to move candidate cards between interview stages by updating the application's current interview step.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The ID of the candidate
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - positionId
+                - interviewStepId
+              properties:
+                positionId:
+                  type: integer
+                  format: int64
+                  description: The ID of the position
+                interviewStepId:
+                  type: integer
+                  format: int64
+                  description: The ID of the interview step to set as the current stage
+      responses:
+        '200':
+          description: Candidate stage updated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Success message
+                  data:
+                    type: object
+                    description: Updated application information
+                    properties:
+                      id:
+                        type: integer
+                        description: Application ID
+                      candidateId:
+                        type: integer
+                        description: Candidate ID
+                      positionId:
+                        type: integer
+                        description: Position ID
+                      currentInterviewStep:
+                        type: integer
+                        description: Updated interview step ID
+                      candidate:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                          firstName:
+                            type: string
+                          lastName:
+                            type: string
+                          email:
+                            type: string
+                      position:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                          title:
+                            type: string
+                      interviewStep:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                          name:
+                            type: string
+        '400':
+          description: Bad request (missing required fields, invalid field types, or invalid interview step)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message
+                  missingFields:
+                    type: array
+                    items:
+                      type: string
+                    description: List of missing required fields (only present when fields are missing)
+        '404':
+          description: Candidate, position, or application not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message indicating what was not found
+        '500':
+          description: Internal server error
 
